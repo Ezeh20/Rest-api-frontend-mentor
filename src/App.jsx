@@ -1,14 +1,12 @@
-import Contact from "./Pages/Contact/Contact"
+import CountryCards from "./Component/Country-Cards/Country-cards"
 import Home from "./Pages/Home/Home"
-
-
-
 
 const App = () => {
 
   return (
     <>
       <Home />
+      <CountryCards />
     </>
   )
 }

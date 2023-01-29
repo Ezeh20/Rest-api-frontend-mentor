@@ -1,10 +1,15 @@
+import Contact from "./Pages/Contact/Contact"
+import Home from "./Pages/Home/Home"
+
+
+
 
 const App = () => {
 
   return (
-    <div className="App">
-      <h1>Obi</h1>
-    </div>
+    <>
+      <Home />
+    </>
   )
 }
 

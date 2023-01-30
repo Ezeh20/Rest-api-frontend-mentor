@@ -1,17 +1,17 @@
 @use '../utils'as utils;
-@use './colors'as colors;
+@use './colors'as *;
 @use '../utils/functions'as fn;
 
 
 html {
-    box-sizing: border-box;
-    font-size: 100%;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -webkit-text-stroke-width: 0.1px;
-    -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke-width: 0.1px;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -21,14 +21,15 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: utils.$base-font;
-    background-color: colors.$Dark-Blue-dark-mode-elements;
-    color: colors.$Dark-Blue-dark-mode-elements;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: utils.$base-font;
+  background-color: $General-white;
+  font-weight: 300;
+  color: $Dark-Blue-light-mode-text;
+}
 
-  a,
+a,
 button {
   display: flex;
   align-items: center;

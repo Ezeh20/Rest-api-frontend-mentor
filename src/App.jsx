@@ -1,13 +1,12 @@
-import CountryCards from "./Component/Country-Cards/Country-cards"
+import { Route, Routes } from "react-router-dom"
 import Home from "./Pages/Home/Home"
 
 const App = () => {
 
   return (
-    <>
-      <Home />
-      <CountryCards />
-    </>
+    <Routes>
+      <Route index element={<Home />} />
+    </Routes>
   )
 }
 

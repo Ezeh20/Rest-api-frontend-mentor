@@ -8,7 +8,7 @@ const Home = props => {
     const { theme, setTheme } = useContext(ThemeContext)
 
     return (
-        <div>
+        <div className={theme}>
             <Layout>
                 <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>click</button>
 

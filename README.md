@@ -48,12 +48,14 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 
 
 ### What I learned
 
 progress
+- Set up file structure ...done
+- Define layout and pages ...done
+- Theme toggle functionality ...done
 
 To see how you can add code snippets, see below:
 

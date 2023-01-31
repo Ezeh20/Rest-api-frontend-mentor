@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../../Context/ThemeContext'
 import Layout from '../../Layout/Layout'
 
+
+
 const Home = props => {
+    const { theme, setTheme } = useContext(ThemeContext)
+
     return (
         <div>
             <Layout>
-                <h1>Home</h1>
+                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>click</button>
+
             </Layout>
         </div>
     )

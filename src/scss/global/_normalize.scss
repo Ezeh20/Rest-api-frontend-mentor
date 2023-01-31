@@ -20,14 +20,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: utils.$base-font;
-  background-color: $General-white;
-  font-weight: 300;
-  color: $Dark-Blue-light-mode-text;
-}
 
 a,
 button {
@@ -58,4 +50,22 @@ ul {
 
 li {
   letter-spacing: 0.5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: utils.$base-font;
+  font-weight: 300;
+  color: $Dark-Blue-light-mode-text;
+}
+
+.light {
+  color: $Dark-Blue-light-mode-text;
+  background-color: $General-white;
+}
+
+.dark {
+  color: $Light-gray-light-mode-background;
+  background-color: $Dark-Blue-dark-mode-background;
 }

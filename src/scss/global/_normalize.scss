@@ -14,10 +14,12 @@ html {
   scroll-behavior: smooth;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
 
@@ -48,6 +50,7 @@ ul {
   margin: 0;
 }
 
+
 li {
   letter-spacing: 0.5;
 }
@@ -57,12 +60,25 @@ body {
   padding: 0;
   font-family: utils.$base-font;
   font-weight: 300;
-  color: $Dark-Blue-light-mode-text;
-  background-color: $General-white;
 }
 
 
+.light {
+  .text {
+    color: $Dark-Blue-light-mode-text;
+  }
+
+  .bg {
+    background-color: $General-white;
+  }
+}
+
 .dark {
-  color: $Light-gray-light-mode-background;
-  background-color: $Dark-Blue-dark-mode-background;
+  .text {
+    color: $Light-gray-light-mode-background;
+  }
+
+  .bg {
+    background-color: $Dark-Blue-dark-mode-background;
+  }
 }

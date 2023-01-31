@@ -1,6 +1,7 @@
 .container_layout {
     margin-inline: 1rem;
     max-width: 1440px;
+    width: 100%;
 
     @media screen and (min-width:1440px) {
         margin-inline: auto;

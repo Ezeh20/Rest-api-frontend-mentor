@@ -1,0 +1,39 @@
+@use '../../scss/global/colors'as *;
+@use '../../scss/utils/_functions.scss'as fn;
+
+.nav {
+    background-color: $General-white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 6rem;
+    font-weight: 600;
+    font-size: fn.rem(16);
+    @media screen and (min-width: 768px) {
+        font-size: fn.rem(20);  
+    }
+
+    .nav_nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .themeContainer {
+        display: flex;
+        align-items: center;
+        column-gap: .8rem;
+    }
+}
+
+.light {
+    background-color: $General-white;
+
+}
+
+.dark {
+    background-color: $Dark-Blue-dark-mode-elements;
+}

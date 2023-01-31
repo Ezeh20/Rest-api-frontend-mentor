@@ -52,7 +52,7 @@ Users should be able to:
 
 ### What I learned
 
-progress
+Progress
 - Set up file structure ...done
 - Define layout and pages ...done
 - Theme toggle functionality ...done

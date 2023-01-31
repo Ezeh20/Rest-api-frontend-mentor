@@ -1,11 +1,11 @@
-import styles from './Container-style.module'
+import styles from './Container-style.module.scss'
 
 import React from 'react'
 
-const Container = ({ children }) => {
+const ContainerW = ({ children }) => {
     return (
         <div className={styles.container_layout}>{children}</div>
     )
 }
 
-export default Container
+export default ContainerW

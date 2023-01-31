@@ -4,15 +4,12 @@ import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 
 const Home = props => {
-    const { theme, setTheme } = useContext(ThemeContext)
-
     return (
         <div>
             <Layout>
-                <div className={`${styles.homo} bg text`}>
-                    <h1>abb</h1>
+                <div className={`${styles.homo}`}>
+                    <h1 className={styles.tex}>abb</h1>
                 </div>
-                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>click</button>
             </Layout>
         </div>
     )

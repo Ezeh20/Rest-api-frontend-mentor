@@ -10,7 +10,7 @@ const Home = props => {
             <Layout>
                 <ContainerW>
                     <div className={`${styles.homo} text`}>
-                        <h1 className={styles.tex}>abb</h1>
+                        
                     </div>
                 </ContainerW>
             </Layout>

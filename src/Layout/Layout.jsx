@@ -7,7 +7,7 @@ import { ThemeContext } from '../Context/ThemeContext'
 const Layout = ({ children }) => {
     const { theme } = useContext(ThemeContext)
     return (
-        <div className={`${styles.main} bg`} >
+        <div className={`${styles.main}  bg`} >
             <Navigation />
             {children}
            {/** <Footer /> */}

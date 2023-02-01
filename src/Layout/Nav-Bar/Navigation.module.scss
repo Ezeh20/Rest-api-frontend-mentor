@@ -11,8 +11,13 @@
     height: 6rem;
     font-weight: 600;
     font-size: fn.rem(16);
+    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .1);
+    margin-bottom: 1rem;
+
     @media screen and (min-width: 768px) {
-        font-size: fn.rem(20);  
+        font-size: fn.rem(20);
+        height: 5rem;
+        margin-bottom: 1.5rem;
     }
 
     .nav_nav {
@@ -26,14 +31,22 @@
         display: flex;
         align-items: center;
         column-gap: .8rem;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: $Dark-gray-light-mode-input;
+            transition: all .3s ease-in-out;
+        }
     }
 }
 
 .light {
     background-color: $General-white;
-
+    transition: all .3s ease-in-out;
 }
 
 .dark {
     background-color: $Dark-Blue-dark-mode-elements;
+    transition: all .3s ease-in-out;
 }

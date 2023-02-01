@@ -12,6 +12,7 @@ html {
   -webkit-text-stroke-width: 0.1px;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+
 }
 
 * {
@@ -20,6 +21,7 @@ html {
   margin: 0;
   list-style: none;
   text-decoration: none;
+  overflow: hidden;
 }
 
 
@@ -64,21 +66,25 @@ body {
 
 
 .light {
+ 
   .text {
     color: $Dark-Blue-light-mode-text;
   }
 
   .bg {
     background-color: $General-white;
+    transition: all .3s ease-in-out;
   }
 }
 
 .dark {
+
   .text {
     color: $Light-gray-light-mode-background;
   }
 
   .bg {
     background-color: $Dark-Blue-dark-mode-background;
+    transition: all .3s ease-in-out;
   }
 }

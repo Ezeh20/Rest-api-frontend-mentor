@@ -56,6 +56,7 @@ Progress
 - Set up file structure ...done
 - Define layout and pages ...done
 - Theme toggle functionality ...done
+- Navigation layout ...done
 
 To see how you can add code snippets, see below:
 

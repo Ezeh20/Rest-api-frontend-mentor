@@ -69,6 +69,11 @@ select {
   outline: none;
   border: none;
 }
+input::placeholder{
+  font-size: 1rem;
+}
+
+//////////////////////////////////////////////Light theme
 
 .light {
 
@@ -78,15 +83,20 @@ select {
 
   .bg {
     background-color: $Light-gray-light-mode-background;
-    
   }
 
   .alt-bg {
-    background-color: $Light-gray-light-mode-background; 
+    background-color: $Light-gray-light-mode-background;
   }
- 
+
+  input::placeholder {
+    color: $Dark-gray-light-mode-input;
+    opacity: .5;
+  }
 }
 
+
+/////////////////////////////////////////Dark theme
 .dark {
 
   .text {
@@ -95,7 +105,6 @@ select {
 
   .bg {
     background-color: $Dark-Blue-dark-mode-background;
-    
   }
 
   .alt-text {
@@ -104,6 +113,10 @@ select {
 
   .alt-bg {
     background-color: $Dark-Blue-dark-mode-elements;
-    
+  }
+
+  input::placeholder {
+    color: $Light-gray-light-mode-background;
+    opacity: .8;
   }
 }

@@ -9,7 +9,7 @@
     position: sticky;
     font-weight: 600;
     font-size: fn.rem(16);
-    box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .1);
+    box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .1);
     margin-bottom: 2rem;
 
     @media screen and (min-width: 768px) {
@@ -45,10 +45,22 @@
 }
 
 .light {
-    background-color: $General-white;
-    
+    .nav_text {
+        color: $Dark-Blue-dark-mode-background;
+    }
+
+    .nav_bg {
+        background-color: $General-white;
+    }
+
 }
 
 .dark {
-    background-color: $Dark-Blue-dark-mode-elements;
+    .nav_text {
+        color: $General-white;
+    }
+
+    .nav_bg {
+        background-color: $Dark-Blue-dark-mode-elements;
+    }
 }

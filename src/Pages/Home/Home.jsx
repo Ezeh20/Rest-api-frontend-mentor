@@ -9,8 +9,7 @@ import styles from './Home.module.scss'
 
 
 const Home = () => {
-    const { countries } = useContext(CountriesContext)
-
+    const { countries, setCountries } = useContext(CountriesContext)
     return (
         <div>
             <Layout>
@@ -25,6 +24,8 @@ const Home = () => {
                                     )
                                 })
                             }
+
+                            
                         </div>
                     </div>
                 </ContainerW>

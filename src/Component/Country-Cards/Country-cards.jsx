@@ -5,7 +5,7 @@ import React from 'react'
 const CountryCards = ({ country }) => {
 
     const { capital, name, region, population, flags } = country
-    const { common, official } = name
+    const { common } = name
     const { png } = flags
     return (
         <div>

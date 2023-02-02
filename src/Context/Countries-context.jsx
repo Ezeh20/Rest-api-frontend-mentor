@@ -7,13 +7,17 @@ export const CountriesContext = createContext({
     searchValue: '',
     setSearchValue: () => { },
     filterValue: '',
-    setFilterValue: () => { }
+    setFilterValue: () => { },
+    isActive: false,
+    setIsActive: () => { }
 })
 
 export const CountriesProvider = ({ children }) => {
     const [countries, setCountries] = useState([])
     const [searchValue, setSearchValue] = useState('')
-    const [filterValue, setFilterValue] = useState('')
+    const [filterValue, setFilterValue] = useState('Filter by region')
+    const [isActive, setIsActive] = useState(false)
+
 
     //function to call the api then set the data to the countries state
     const countriesCall = async () => {
@@ -27,7 +31,7 @@ export const CountriesProvider = ({ children }) => {
     }, [])
 
 
-    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue }
+    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive }
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )

@@ -57,6 +57,7 @@ Progress
 - Define layout and pages ...done
 - Theme toggle functionality ...done
 - Navigation layout ...done
+- Search and filter by region feature ...done
 
 To see how you can add code snippets, see below:
 

@@ -15,7 +15,7 @@ const Home = () => {
         <div>
             <Layout>
                 <ContainerW>
-                    <div className={`${styles.homo} text`}>
+                    <div className={`${styles.home} bg text`}>
                         <SearchComponent />
                         <div>
                             {

@@ -21,7 +21,7 @@ html {
   margin: 0;
   list-style: none;
   text-decoration: none;
- 
+
 }
 
 
@@ -64,17 +64,27 @@ body {
   font-weight: 300;
 }
 
+input,
+select {
+  outline: none;
+  border: none;
+}
 
 .light {
- 
+
   .text {
-    color: $Dark-Blue-light-mode-text;
+    color: $Dark-gray-light-mode-input;
   }
 
   .bg {
-    background-color: $General-white;
-    transition: all .3s ease-in-out;
+    background-color: $Light-gray-light-mode-background;
+    
   }
+
+  .alt-bg {
+    background-color: $Light-gray-light-mode-background; 
+  }
+ 
 }
 
 .dark {
@@ -85,6 +95,15 @@ body {
 
   .bg {
     background-color: $Dark-Blue-dark-mode-background;
-    transition: all .3s ease-in-out;
+    
+  }
+
+  .alt-text {
+    color: $Light-gray-light-mode-background;
+  }
+
+  .alt-bg {
+    background-color: $Dark-Blue-dark-mode-elements;
+    
   }
 }

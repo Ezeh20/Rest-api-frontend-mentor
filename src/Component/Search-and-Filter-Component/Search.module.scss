@@ -63,6 +63,9 @@
             &:hover {
                 cursor: pointer;
             }
+            .drop_down_icon{
+                font-size: 1.3rem;
+            }
         }
 
         .options {
@@ -75,13 +78,16 @@
             top: 4rem;
 
             .region {
-                padding: .8rem 1rem;
-
                 &:hover {
                     cursor: pointer;
                     background: $Dark-Blue-dark-mode-background;
                     color: $General-white;
                 }
+            }
+
+            .option {
+                padding: .8rem 1rem;
+                width: 100%;
             }
         }
     }

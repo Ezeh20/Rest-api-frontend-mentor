@@ -6,6 +6,7 @@ import { VscClose } from "react-icons/vsc";
 import { TbChevronDown } from "react-icons/tb";
 
 
+
 /**
  * create an onChange function the takes the user's input the stores 
  * it in a state.
@@ -13,7 +14,7 @@ import { TbChevronDown } from "react-icons/tb";
  */
 
 const SearchComponent = () => {
-    const { filterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search, setFiltered
+    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search, searched, setSearched
     } = useContext(CountriesContext)
 
     const [clear, setClear] = useState('')
@@ -54,6 +55,16 @@ const SearchComponent = () => {
         setClear("")
     }
 
+    //filter by region
+    const filterRegion = (option) => {
+        setFilterValue(option)
+    }
+
+    //clear filter
+    const clearRegion = () => {
+        setFilterValue('')
+        setIsActive(true)
+    }
     return (
         <div className={`${styles.searchContainer} `}>
             <div className={`${styles.searchArea} alt-bg`}>
@@ -65,15 +76,16 @@ const SearchComponent = () => {
             </div>
             <div className={`${styles.drop_down_container} `}>
                 <div className={`${styles.drop_down_current} alt-bg`} onClick={active}>
-                    <span>{filterValue}</span>
-                    <TbChevronDown />
+                    {filterValue.length > 0 ? <span>{filterValue}</span> : <span>Filter by region</span>}
+                    {filterValue.length > 0 ? <VscClose className={styles.drop_down_icon} onClick={clearRegion} /> : <TbChevronDown className={styles.drop_down_icon} />}
                 </div>
                 <div className={`${styles.options} alt-bg`}>
                     {
+
                         isActive && options.map(option => {
                             return (
-                                <div key={option} className={`${styles.region}`}>
-                                    <p>{option}</p>
+                                <div key={option} className={`${styles.region}`} onClick={() => setIsActive((curr) => !curr)}>
+                                    <p className={styles.option} onClick={() => filterRegion(option)}>{option}</p>
                                 </div>
                             )
                         })

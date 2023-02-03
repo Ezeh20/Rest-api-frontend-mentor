@@ -30,13 +30,16 @@ Users should be able to:
 
 ### Progress screenshots
 
-- Folder structure
+### Folder structure
+
 ![](./src/assets/img/folder-struc.png)
 
-- Larger screens dark-mode
+### Larger screens dark-mode
+
 ![](./src/assets/img/desktop-dark.png)
 
-- Filtered result based on region
+### Filtered result based on region
+
 ![](./src/assets/img/desktop-filtered.png)
 
 

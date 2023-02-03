@@ -28,9 +28,16 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
 
-### Screenshot
+### Progress screenshots
 
-![](./screenshot.jpg)
+- Folder structure
+![](./src/assets/img/folder-struc.png)
+
+- Larger screens dark-mode
+![](./src/assets/img/desktop-dark.png)
+
+- Filtered result based on region
+![](./src/assets/img/desktop-filtered.png)
 
 
 ### Links
@@ -57,7 +64,8 @@ Progress
 - Define layout and pages ...done
 - Theme toggle functionality ...done
 - Navigation layout ...done
-- Search and filter by region feature ...done
+- Search and filter by region feature UI ...done
+- Functional Search and filter features ...done
 
 To see how you can add code snippets, see below:
 

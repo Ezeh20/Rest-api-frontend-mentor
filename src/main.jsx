@@ -7,7 +7,7 @@ import { ThemeContextProvider } from './Context/ThemeContext'
 import { CountriesProvider } from './Context/Countries-context'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <BrowserRouter>
       <ThemeContextProvider>
         <CountriesProvider>
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </CountriesProvider>
       </ThemeContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
+
 )

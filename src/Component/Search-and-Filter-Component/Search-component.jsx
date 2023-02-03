@@ -1,9 +1,8 @@
 import styles from './Search.module.scss'
-import { IoIosSearch } from 'react-icons/io'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { CountriesContext } from '../../Context/Countries-context'
-
-import { RiArrowDownSLine } from "react-icons/ri";
+import { GoSearch } from "react-icons/go";
+import { useForm } from 'react-hook-form';
 
 /**
  * create an onChange function the takes the user's input the stores 
@@ -11,12 +10,15 @@ import { RiArrowDownSLine } from "react-icons/ri";
  * 
  */
 const SearchComponent = () => {
-    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive } = useContext(CountriesContext)
+    const { countries,
+        setCountries, filterValue,
+        setFilterValue, searchValue,
+        setSearchValue, isActive,
+        setIsActive, searched, setSearched
+    } = useContext(CountriesContext)
 
-    const onChangeSarch = (e) => {
-        const { value } = e.target
-        setSearchValue(value)
-    }
+
+
 
     const active = () => {
         setIsActive(current => !current)
@@ -28,16 +30,39 @@ const SearchComponent = () => {
     }
     const options = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
 
+
+    const search = (event) => {
+        const value = event.target.value
+        setSearchValue(value)
+
+    }
+
+
+    const clearSearch = async () => {
+        const data = await fetch('https://restcountries.com/v3.1/all')
+        const all = await data.json()
+        setCountries(all)
+        setSearchValue('')
+    }
+
+    useEffect(() => {
+
+    }, [])
+
+
+
     return (
         <div className={`${styles.searchContainer} `}>
-            <div className={`${styles.searchArea} alt-bg`}>
-                <IoIosSearch className={`${styles.serchIcon}`} />
-                <input type="text" placeholder='Search for a country...' className={`${styles.homeInput} alt-bg text`} onChange={onChangeSarch} />
-            </div>
+            <form className={`${styles.searchArea} alt-bg`}>
+                <button type='submit' >sub</button>
+
+                <input type="text" placeholder='Search for a country...' className={`${styles.homeInput} alt-bg text`} onChange={search} />
+
+            </form>
             <div className={`${styles.drop_down_container} `}>
                 <div className={`${styles.drop_down_current} alt-bg`} onClick={active}>
                     <span>{filterValue}</span>
-                    <RiArrowDownSLine />
+
                 </div>
                 <div className={`${styles.options} alt-bg`}>
                     {

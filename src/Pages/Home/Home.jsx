@@ -9,7 +9,7 @@ import styles from './Home.module.scss'
 
 
 const Home = () => {
-    const { countries, setCountries } = useContext(CountriesContext)
+    const {  filtered } = useContext(CountriesContext)
     return (
         <div>
             <Layout>
@@ -18,14 +18,14 @@ const Home = () => {
                         <SearchComponent />
                         <div>
                             {
-                                countries.map((country, idx) => {
-                                    return (
-                                        <CountryCards key={idx} country={country} />
-                                    )
-                                })
+                                filtered.length === 0 ? <p>No country found</p>
+                                    :
+                                filtered.map((country, idx) => {
+                                        return (
+                                            <CountryCards key={idx} country={country} />
+                                        )
+                                    })
                             }
-
-                            
                         </div>
                     </div>
                 </ContainerW>

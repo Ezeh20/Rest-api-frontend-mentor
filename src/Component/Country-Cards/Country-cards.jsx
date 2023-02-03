@@ -9,7 +9,7 @@ const CountryCards = ({ country }) => {
     const { png } = flags
     return (
         <div>
-
+            <p>{common}</p>
 
         </div>
     )

@@ -7,6 +7,10 @@
     align-items: flex-start;
     row-gap: 2rem;
     justify-content: space-between;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
@@ -44,8 +48,8 @@
         width: 220px;
         display: flex;
         flex-direction: column;
-        row-gap: .5rem;
         align-self: flex-start;
+        position: relative;
 
         .drop_down_current {
             width: 100%;
@@ -62,11 +66,13 @@
         }
 
         .options {
+            width: 100%;
             box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .1);
             border-radius: 5px;
             display: flex;
             flex-direction: column;
-
+            position: absolute;
+            top: 4rem;
 
             .region {
                 padding: .8rem 1rem;

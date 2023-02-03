@@ -4,9 +4,9 @@
 .nav {
     background-color: $General-white;
     width: 100%;
-    top: 0;
-    height: 6rem;
     position: sticky;
+    top: 5rem;
+    height: 6rem;
     font-weight: 600;
     font-size: fn.rem(16);
     box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .1);

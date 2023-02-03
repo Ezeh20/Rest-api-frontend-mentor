@@ -13,7 +13,9 @@ export const CountriesContext = createContext({
     searched: false,
     setSearched: () => { },
     filtered: [],
-    setFiltered: () => { }
+    setFiltered: () => { },
+    search: '',
+    setSearch: () => { }
 })
 
 export const CountriesProvider = ({ children }) => {
@@ -23,10 +25,8 @@ export const CountriesProvider = ({ children }) => {
     const [isActive, setIsActive] = useState(false)
     const [searched, setSearched] = useState(false)
     const [filtered, setFiltered] = useState(countries)
+    const [search, setSearch] = useState('')
 
-
-
-    //function to call the api then set the data to the countries state
 
     //Load the data once on mount
     useEffect(() => {
@@ -38,16 +38,16 @@ export const CountriesProvider = ({ children }) => {
         countriesCall()
     }, [])
 
+
     useEffect(() => {
         const ned = countries.filter((filtered) => {
-            return filtered.name['common'].toLowerCase().includes(searchValue.toLowerCase())
+            return filtered.name['common'].toLowerCase().includes(search.toLowerCase())
         })
         setFiltered(ned)
-    }, [countries, searchValue])
+    }, [countries, search])
 
-    console.log('filter', filtered)
 
-    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered }
+    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch }
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )

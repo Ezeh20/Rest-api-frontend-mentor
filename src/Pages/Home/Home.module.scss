@@ -1,5 +1,9 @@
 .home {
     .contain {
-     
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+        gap: 3.3rem;
+        place-content: center;
+        padding-bottom: 3rem;
     }
 }

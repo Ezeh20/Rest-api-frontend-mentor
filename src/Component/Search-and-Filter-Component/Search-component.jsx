@@ -1,5 +1,5 @@
 import styles from './Search.module.scss'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect,  useState } from 'react'
 import { CountriesContext } from '../../Context/Countries-context'
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { VscClose } from "react-icons/vsc";

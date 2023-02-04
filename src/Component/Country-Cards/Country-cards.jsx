@@ -1,31 +1,27 @@
-import React, { useContext } from 'react'
-import { ThemeContext } from '../../Context/ThemeContext'
+import React from 'react'
 import styles from './Country-cards-style.module.scss'
 
 const CountryCards = ({ country }) => {
 
-    {/**
+    console.log(country)
 const { capital, name, region, population, flags } = country
     const { common } = name
     const { png } = flags
-*/}
-    const { theme } = useContext(ThemeContext)
 
-    const { flag, name, population, region, capital } = country
+
     return (
-        <div className={styles[theme]}>
-            <div className={`${styles.country_card}`}>
-                <img src={flag} alt="flag" />
-                <div className={`${styles.card_content}`}>
-                    <span className='alt-text'>{name}</span>
-                    <div className={styles.country_info}>
-                        <p>Population:{population}</p>
-                        <p>Region:{region}</p>
-                        <p>Capital:{capital}</p>
-                    </div>
+        <div className={`${styles.country_card} alt-bg`}>
+            <img src={png} alt="flag" className={styles.country_flag} />
+            <div className={`${styles.card_content}`}>
+                <span className='alt-text'>{common}</span>
+                <div className={styles.country_info}>
+                    <p>Population: {population}</p>
+                    <p>Region: {region}</p>
+                    <p>Capital: {capital}</p>
                 </div>
             </div>
         </div>
+
     )
 }
 

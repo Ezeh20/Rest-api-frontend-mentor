@@ -7,30 +7,24 @@ import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 
-import img from "../../assets/img/mobile-rest-dark.png"
-
-const fake = {
-    flag: img,
-    name: 'Iceland',
-    population: 120000000000000,
-    region: 'Iceplace',
-    capital: 'congo'
-}
 
 const Home = () => {
     const { filtered } = useContext(CountriesContext)
+
+
     return (
         <div>
             <Layout>
                 <ContainerW>
                     <div className={`${styles.home} bg text`}>
                         <SearchComponent />
-                        <div>
+                        <div className={styles.contain}>
                             {
-
-
-                                <CountryCards country={fake} />
-
+                                filtered.map((country, idx) => {
+                                    return (
+                                        <CountryCards key={idx} country={country} />
+                                    )
+                                })
                             }
                         </div>
                     </div>

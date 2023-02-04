@@ -1,5 +1,5 @@
 import styles from './Search.module.scss'
-import { useContext, useEffect,  useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CountriesContext } from '../../Context/Countries-context'
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { VscClose } from "react-icons/vsc";
@@ -14,7 +14,7 @@ import { TbChevronDown } from "react-icons/tb";
  */
 
 const SearchComponent = () => {
-    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search, searched, setSearched
+    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search, filtered, setMappedCountries
     } = useContext(CountriesContext)
 
     const [clear, setClear] = useState('')
@@ -37,9 +37,10 @@ const SearchComponent = () => {
     //This sets the searched value to a new state which when the user clicks the search icon 
     //will set that value to another state which will then be used to filter the countries array
     //This approach will reduce the number of times the app needs to rerender
+   
 
     const searchCountries = () => {
-        setSearch(searchValue)
+        setSearch(searchValue)        
     }
 
     //mount once the rerender when the search state changes

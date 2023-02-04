@@ -26,7 +26,7 @@ export const CountriesProvider = ({ children }) => {
     const [searched, setSearched] = useState(false)
     const [filtered, setFiltered] = useState(countries)
     const [search, setSearch] = useState('')
-
+    
 
 
     //Load the data once on mount

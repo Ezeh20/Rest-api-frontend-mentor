@@ -14,11 +14,21 @@
     .card_content {
         padding: 1rem;
 
+        .country_name {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
         .country_info {
-            padding: 1.2rem 0 1.5rem;
+            padding: 1rem 0 .5rem;
             display: flex;
             flex-direction: column;
             row-gap: .5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            .country_details{
+              font-weight: 300;
+            }
         }
     }
 }

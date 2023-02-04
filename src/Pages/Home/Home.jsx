@@ -7,9 +7,18 @@ import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 
+import img from "../../assets/img/mobile-rest-dark.png"
+
+const fake = {
+    flag: img,
+    name: 'Iceland',
+    population: 120000000000000,
+    region: 'Iceplace',
+    capital: 'congo'
+}
 
 const Home = () => {
-    const {  filtered } = useContext(CountriesContext)
+    const { filtered } = useContext(CountriesContext)
     return (
         <div>
             <Layout>
@@ -18,13 +27,10 @@ const Home = () => {
                         <SearchComponent />
                         <div>
                             {
-                                filtered.length === 0 ? <p>No country found</p>
-                                    :
-                                filtered.map((country, idx) => {
-                                        return (
-                                            <CountryCards key={idx} country={country} />
-                                        )
-                                    })
+
+
+                                <CountryCards country={fake} />
+
                             }
                         </div>
                     </div>

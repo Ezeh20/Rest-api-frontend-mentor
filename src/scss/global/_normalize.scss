@@ -24,6 +24,9 @@ html {
 
 }
 
+img {
+  max-width: 100%;
+}
 
 a,
 button {
@@ -69,7 +72,8 @@ select {
   outline: none;
   border: none;
 }
-input::placeholder{
+
+input::placeholder {
   font-size: 1rem;
 }
 
@@ -78,7 +82,7 @@ input::placeholder{
 .light {
 
   .text {
-    color: $Dark-gray-light-mode-input;
+    color: $Dark-Blue-light-mode-text;
   }
 
   .bg {
@@ -87,6 +91,10 @@ input::placeholder{
 
   .alt-bg {
     background-color: $Light-gray-light-mode-background;
+  }
+
+  .alt-text {
+    font-weight: 600
   }
 
   input::placeholder {

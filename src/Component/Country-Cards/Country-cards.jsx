@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './Country-cards-style.module.scss'
 
 const CountryCards = ({ country }) => {
@@ -6,13 +7,22 @@ const CountryCards = ({ country }) => {
     const { common } = name
     const { png } = flags
 
-
-
     //formatting country population
     const formatted = new Intl.NumberFormat().format(population)
+    const nav = useNavigate()
+
+    //replace white spaces with a (-) in the common names
+    const dynamic = common.replaceAll(' ', '-')
+
+    //navigate to the dynamic route while passing the state of that singular item
+    const Navigate = () => {
+        nav(dynamic, {
+            state: country
+        })
+    }
 
     return (
-        <div className={`${styles.country_card} alt-bg`}>
+        <div className={`${styles.country_card} alt-bg`} onClick={Navigate}>
             <img src={png} alt="flag" className={styles.country_flag} />
             <div className={`${styles.card_content}`}>
                 <span className={`${styles.country_name} 'alt-text'`}>{common}</span>

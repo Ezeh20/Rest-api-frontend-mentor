@@ -16,6 +16,7 @@
         border-top-right-radius: 5px;
         object-fit: cover;
         transition: all 2s ease-in-out;
+
         &:hover {
             transform: scale(1.1);
         }
@@ -37,8 +38,15 @@
             font-weight: 600;
             font-size: 1rem;
 
-            .country_details {
-                font-weight: 300;
+
+            .capital {
+                display: flex;
+                flex-direction: row;
+
+                .country_details {
+                    font-weight: 300;
+                    margin-left: .5rem;
+                }
             }
         }
     }

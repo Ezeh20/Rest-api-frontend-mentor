@@ -21,6 +21,15 @@ const CountryCards = ({ country }) => {
         })
     }
 
+    //map out the capital
+    const Capital = capital && capital.filter((_, idx) => idx < 2).map((cap, idx) => {
+        return (
+            <p key={idx} className={styles.country_details}>{cap}
+                {idx === capital.length - 1 ? "" : " , "}
+            </p>
+        )
+    })
+
     return (
         <div className={`${styles.country_card} alt-bg`} onClick={Navigate}>
             <img src={png} alt="flag" className={styles.country_flag} />
@@ -29,7 +38,7 @@ const CountryCards = ({ country }) => {
                 <div className={styles.country_info}>
                     <p>Population: <span className={styles.country_details}>{formatted}</span></p>
                     <p>Region: <span className={styles.country_details}>{region}</span></p>
-                    <p>Capital: <span className={styles.country_details}>{capital}</span></p>
+                    <span className={styles.capital}>Capital:  {Capital}</span>
                 </div>
             </div>
         </div>

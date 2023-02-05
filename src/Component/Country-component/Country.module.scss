@@ -1,0 +1,15 @@
+.discription {
+    .country_details {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+
+        .details_img {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            object-fit: cover;
+        }
+    }
+}

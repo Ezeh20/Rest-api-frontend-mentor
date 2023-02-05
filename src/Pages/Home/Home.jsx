@@ -9,7 +9,7 @@ import styles from './Home.module.scss'
 
 const Home = () => {
     const { filtered } = useContext(CountriesContext)
-
+   
     return (
         <div>
             <Layout>
@@ -19,7 +19,7 @@ const Home = () => {
                         {filtered.length < 1 && <p className={styles.not_found}> No country found</p>}
                         <div className={styles.contain}>
                             {
-                                filtered.sort(() => Math.random() - 0.5).map((country, idx) => {
+                                filtered.map((country, idx) => {
                                     return (
                                         <CountryCards key={idx} country={country} />
                                     )

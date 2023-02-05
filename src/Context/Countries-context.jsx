@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 
-
 export const CountriesContext = createContext({
     countries: [],
     setCountries: () => { },
@@ -26,7 +25,7 @@ export const CountriesProvider = ({ children }) => {
     const [searched, setSearched] = useState(false)
     const [filtered, setFiltered] = useState(countries)
     const [search, setSearch] = useState('')
-    
+
 
 
     //Load the data once on mount
@@ -42,10 +41,10 @@ export const CountriesProvider = ({ children }) => {
 
     //filter then produce a search result based on country's name
     useEffect(() => {
-        const ned = countries.filter((filtered) => {
+        const newItems = countries.filter((filtered) => {
             return filtered.name['common'].toLowerCase().includes(search.toLowerCase())
         })
-        setFiltered(ned)
+        setFiltered(newItems)
     }, [countries, search])
 
 

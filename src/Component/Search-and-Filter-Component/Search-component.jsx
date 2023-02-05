@@ -5,16 +5,13 @@ import { RxMagnifyingGlass } from "react-icons/rx";
 import { VscClose } from "react-icons/vsc";
 import { TbChevronDown } from "react-icons/tb";
 
-
-
 /**
  * create an onChange function the takes the user's input the stores 
  * it in a state.
- * 
  */
 
 const SearchComponent = () => {
-    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search, filtered, setMappedCountries
+    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search
     } = useContext(CountriesContext)
 
     const [clear, setClear] = useState('')
@@ -34,20 +31,19 @@ const SearchComponent = () => {
         setClear(value)
     }
 
-    //This sets the searched value to a new state which when the user clicks the search icon 
-    //will set that value to another state which will then be used to filter the countries array
-    //This approach will reduce the number of times the app needs to rerender
-   
-
+    /**
+     * This sets the searched value to a new state which when the user clicks the search icon 
+     * will set that value to another state which will then be used to filter the countries array
+     * This approach will reduce the number of times the app needs to rerender
+     */
     const searchCountries = () => {
-        setSearch(searchValue)        
+        setSearch(searchValue)
     }
 
     //mount once the rerender when the search state changes
     useEffect(() => {
         searchCountries()
     }, [search])
-
 
     //a reset function that basically sets everything to their default states
     const clearInput = () => {
@@ -82,7 +78,6 @@ const SearchComponent = () => {
                 </div>
                 <div className={`${styles.options} alt-bg`}>
                     {
-
                         isActive && options.map(option => {
                             return (
                                 <div key={option} className={`${styles.region}`} onClick={() => setIsActive((curr) => !curr)}>
@@ -93,9 +88,7 @@ const SearchComponent = () => {
                     }
                 </div>
             </div>
-
         </div>
     )
 }
-
 export default SearchComponent

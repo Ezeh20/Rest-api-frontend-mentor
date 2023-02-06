@@ -1,16 +1,25 @@
-import React, { useContext } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
 import ButtonComponent from '../Button/Button-component'
 import styles from '../Country-component/Country.module.scss'
 import { HiArrowNarrowLeft } from "react-icons/hi";
+import { CountriesContext } from '../../Context/Countries-context'
 
 const BorderCountry = ({ border }) => {
-    const location = useLocation()
     const nav = useNavigate()
-    const borderNav = useNavigate()
-    const { capital, name, region, population, flags, subregion, tld, currencies, languages, borders } = border
+    const {
+        capital,
+        name,
+        region,
+        population,
+        flags,
+        subregion,
+        tld,
+        currencies,
+        languages
+    } = border
     const { common, nativeName } = name
     const { svg } = flags
 
@@ -56,9 +65,10 @@ const BorderCountry = ({ border }) => {
         )
     })
 
-
     //format population
     const formatted = new Intl.NumberFormat().format(population)
+
+
     return (
         <div>
             <Layout>
@@ -89,7 +99,6 @@ const BorderCountry = ({ border }) => {
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>

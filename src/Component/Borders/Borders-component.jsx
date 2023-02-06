@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import { CountriesContext } from '../../Context/Countries-context'
 import BorderCountry from '../BorderCountry/BorderCountry'
 
-
 const BordersComponent = () => {
     const { currentBorder, setCurrentBorder, countries } = useContext(CountriesContext)
     const loc = useLocation()
@@ -17,7 +16,7 @@ const BordersComponent = () => {
     return (
         <>
             {
-                currentBorder && currentBorder.map((border, idx) => {
+                !currentBorder ? 'Loading' : currentBorder.map((border, idx) => {
                     return (
                         <BorderCountry key={idx} border={border} />
                     )

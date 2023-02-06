@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
@@ -11,7 +11,18 @@ const CountryComponent = () => {
     const location = useLocation()
     const nav = useNavigate()
     const borderNav = useNavigate()
-    const { capital, name, region, population, flags, subregion, tld, currencies, languages, borders } = location.state
+    const {
+        capital,
+        name,
+        region,
+        population,
+        flags,
+        subregion,
+        tld,
+        currencies,
+        languages,
+        borders
+    } = location.state
     const { common, nativeName } = name
     const { svg } = flags
 

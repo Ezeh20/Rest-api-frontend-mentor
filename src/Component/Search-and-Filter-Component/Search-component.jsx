@@ -11,7 +11,15 @@ import { TbChevronDown } from "react-icons/tb";
  */
 
 const SearchComponent = () => {
-    const { filterValue, setFilterValue, setSearchValue, isActive, setIsActive, searchValue, setSearch, search
+    const {
+        filterValue,
+        setFilterValue,
+        setSearchValue,
+        isActive,
+        setIsActive,
+        searchValue,
+        setSearch,
+        search
     } = useContext(CountriesContext)
 
     const [clear, setClear] = useState('')

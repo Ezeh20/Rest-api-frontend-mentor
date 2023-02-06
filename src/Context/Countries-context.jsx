@@ -57,8 +57,24 @@ export const CountriesProvider = ({ children }) => {
         setFiltered(filterRegion)
     }, [countries, filterValue])
 
-
-    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch, currentBorder, setCurrentBorder }
+    const value = {
+        countries,
+        setCountries,
+        searchValue,
+        setSearchValue,
+        filterValue,
+        setFilterValue,
+        isActive,
+        setIsActive,
+        searched,
+        setSearched,
+        filtered,
+        setFiltered,
+        search,
+        setSearch,
+        currentBorder,
+        setCurrentBorder
+    }
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )

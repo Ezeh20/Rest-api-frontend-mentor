@@ -14,7 +14,9 @@ export const CountriesContext = createContext({
     filtered: [],
     setFiltered: () => { },
     search: '',
-    setSearch: () => { }
+    setSearch: () => { },
+    currentBorder: '',
+    setCurrentBorder: () => { }
 })
 
 export const CountriesProvider = ({ children }) => {
@@ -25,6 +27,7 @@ export const CountriesProvider = ({ children }) => {
     const [searched, setSearched] = useState(false)
     const [filtered, setFiltered] = useState(countries)
     const [search, setSearch] = useState('')
+    const [currentBorder, setCurrentBorder] = useState('')
 
     //Load the data once on mount
     useEffect(() => {
@@ -55,7 +58,7 @@ export const CountriesProvider = ({ children }) => {
     }, [countries, filterValue])
 
 
-    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch}
+    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch, currentBorder, setCurrentBorder }
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )

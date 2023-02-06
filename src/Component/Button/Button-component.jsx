@@ -1,12 +1,15 @@
 import React from 'react'
-import styles from './Button.module.scss'
+import './Button.scss'
 
-const ButtonComponent = ({ onClick, children }) => {
+const ButtonTypes = {
+    back: 'back',
+    border: 'border'
+}
+const ButtonComponent = ({ onClick, children, buttonType }) => {
     return (
-        <button className={`${styles.buttons} alt-bg text`} onClick={onClick}>
+        <button className={`buttons  ${ButtonTypes[buttonType]} alt-bg text`} onClick={onClick}>
             {children}
         </button>
     )
 }
-
 export default ButtonComponent

@@ -1,19 +1,25 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
 import ButtonComponent from '../Button/Button-component'
 import styles from './Country.module.scss'
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
+
 const CountryComponent = () => {
     //access the state in the current route which was passed using the useNavigate hook
     const location = useLocation()
+    const nav = useNavigate()
+
     const { capital, name, region, population, flags, subregion, tld, currencies, languages, borders } = location.state
     const { common, nativeName } = name
     const { svg } = flags
 
-    console.log(borders ? borders : 'no data')
+    //navigate to previous route
+    const back = () => {
+        nav(-1)
+    }
 
     //use the object key to the native language then get the nativeName of that country
     const objectKeys = Object.keys(nativeName)
@@ -22,13 +28,11 @@ const CountryComponent = () => {
 
     //use object keys to get the currency of that country
     const currenciesKeys = Object.keys(currencies)
-    const ckey = currenciesKeys[0]
-    const currency = currencies[ckey].name
 
     //languages
     const Language = Object.keys(languages)
 
-    const Lang = Language.map((lang, idx) => {
+    const Lang = Language.filter((_, idx) => idx < 5).map((lang, idx) => {
         return (
             <span key={idx}>{languages[lang]}
                 {idx === Language.length - 1 ? "" : " , "}
@@ -56,7 +60,7 @@ const CountryComponent = () => {
     //map out the borders
     const Border = borders && borders.map((border, idx) => {
         return (
-            <ButtonComponent key={idx}>{border}</ButtonComponent>
+            <ButtonComponent buttonType={`border`} key={idx}>{border}</ButtonComponent>
         )
     })
 
@@ -66,34 +70,36 @@ const CountryComponent = () => {
             <Layout>
                 <ContainerW>
                     <div className={`${styles.discription} text`}>
-                        <ButtonComponent>
+                        <ButtonComponent onClick={back}>
                             <HiArrowNarrowLeft />
                             Back
                         </ButtonComponent>
-                        <div className={`${styles.country_details} text`}>
+                        <div className={`${styles.country_detail} text`}>
                             <img src={svg} alt="country-flag" className={styles.details_img} />
-                            <div className={`${styles.details_content}`}>
-                                <p>{common}</p>
-                                <div className={`${styles.country_info}`}>
-                                    <div className={`${styles.info_details}`}>
-                                        <p>Native Name: <span>{Native_name}</span></p>
-                                        <p>Population: <span>{formatted}</span></p>
-                                        <p>Region: <span>{region}</span></p>
-                                        <p>Sub Region: <span>{subregion}</span></p>
-                                        <p>Capital: <span>{Capital}</span>
-                                        </p>
-                                    </div>
-                                    <div className={`${styles.info_details}`}>
-                                        <p>Top Level Domain: {tld}</p>
-                                        <p className={styles.crown}>Currencies: <span>{Currency}</span></p>
-                                        <p>Languages: {Lang}</p>
+                            <div className={`${styles.second}`}>
+                                <div className={`${styles.details_content}`}>
+                                    <p className={`${styles.common} alt-text`}>{common}</p>
+                                    <div className={`${styles.country_info}`}>
+                                        <div className={`${styles.info_details} alt-text`}>
+                                            <p>Native Name: <span>{Native_name}</span></p>
+                                            <p>Population: <span>{formatted}</span></p>
+                                            <p>Region: <span>{region}</span></p>
+                                            <p>Sub Region: <span>{subregion}</span></p>
+                                            <p>Capital: <span>{Capital}</span>
+                                            </p>
+                                        </div>
+                                        <div className={`${styles.info_details} alt-text`}>
+                                            <p>Top Level Domain: <span>{tld}</span></p>
+                                            <p className={styles.crown}>Currencies: <span>{Currency}</span></p>
+                                            <p>Languages: {Lang}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={`${styles.country_border}`}>
-                                <p>Border Countries:</p>
-                                <div className={`${styles.borders}`}>
-                                    {Border ? Border : 'No data'}
+                                <div className={`${styles.country_border}`}>
+                                    <p>Border Countries:</p>
+                                    <div className={`${styles.borders}`}>
+                                        {Border ? Border : 'No data'}
+                                    </div>
                                 </div>
                             </div>
                         </div>

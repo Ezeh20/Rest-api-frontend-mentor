@@ -1,6 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import styles from './Country-cards-style.module.scss'
+
+
 
 const CountryCards = ({ country }) => {
     const { capital, name, region, population, flags } = country
@@ -10,6 +12,7 @@ const CountryCards = ({ country }) => {
     //formatting country population
     const formatted = new Intl.NumberFormat().format(population)
     const nav = useNavigate()
+    const loc = useLocation()
 
     //replace white spaces with a (-) in the common names
     const dynamic = common.replaceAll(' ', '-')

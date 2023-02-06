@@ -28,6 +28,14 @@
         @media screen and (min-width: 768px) {
             height: 5rem;
         }
+        .nav_text{
+            &:hover{
+                cursor: pointer;
+            }
+            @media screen and (max-width: 320px) {
+                font-size: .8rem;
+            }
+        }
     }
 
     .themeContainer {

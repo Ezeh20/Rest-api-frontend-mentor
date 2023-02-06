@@ -5,7 +5,6 @@ import Layout from '../../Layout/Layout'
 import ButtonComponent from '../Button/Button-component'
 import styles from '../Country-component/Country.module.scss'
 import { HiArrowNarrowLeft } from "react-icons/hi";
-import { CountriesContext } from '../../Context/Countries-context'
 
 const BorderCountry = ({ border }) => {
     const nav = useNavigate()

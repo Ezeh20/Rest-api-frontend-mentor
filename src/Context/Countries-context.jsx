@@ -26,8 +26,6 @@ export const CountriesProvider = ({ children }) => {
     const [filtered, setFiltered] = useState(countries)
     const [search, setSearch] = useState('')
 
-
-
     //Load the data once on mount
     useEffect(() => {
         const countriesCall = async () => {
@@ -57,7 +55,7 @@ export const CountriesProvider = ({ children }) => {
     }, [countries, filterValue])
 
 
-    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch }
+    const value = { countries, setCountries, searchValue, setSearchValue, filterValue, setFilterValue, isActive, setIsActive, searched, setSearched, filtered, setFiltered, search, setSearch}
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )

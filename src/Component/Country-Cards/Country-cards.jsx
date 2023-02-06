@@ -23,7 +23,6 @@ const CountryCards = ({ country }) => {
             state: country
         })
     }
-
     //map out the capital
     const Capital = capital && capital.filter((_, idx) => idx < 2).map((cap, idx) => {
         return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import ContainerW from '../../Layout/Container/Container'
 import Layout from '../../Layout/Layout'
@@ -6,12 +6,11 @@ import ButtonComponent from '../Button/Button-component'
 import styles from './Country.module.scss'
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
-
 const CountryComponent = () => {
     //access the state in the current route which was passed using the useNavigate hook
     const location = useLocation()
     const nav = useNavigate()
-
+    const borderNav = useNavigate()
     const { capital, name, region, population, flags, subregion, tld, currencies, languages, borders } = location.state
     const { common, nativeName } = name
     const { svg } = flags
@@ -57,13 +56,19 @@ const CountryComponent = () => {
             </span>
         )
     })
+
     //map out the borders
     const Border = borders && borders.map((border, idx) => {
+        const Border = (country) => {
+            borderNav(country, {
+                state: country
+            })
+        }
         return (
-            <ButtonComponent buttonType={`border`} key={idx}>{border}</ButtonComponent>
+            <ButtonComponent buttonType={`border`} onClick={() => Border(border)} key={idx}>{border}</ButtonComponent>
         )
     })
-
+    //format population
     const formatted = new Intl.NumberFormat().format(population)
     return (
         <div>

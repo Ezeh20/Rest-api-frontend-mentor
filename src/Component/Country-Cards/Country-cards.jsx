@@ -5,7 +5,7 @@ import styles from './Country-cards-style.module.scss'
 
 
 const CountryCards = ({ country }) => {
-    const { capital, name, region, population, flags } = country
+    const { capital, name, region, population, flags, cca3 } = country
     const { common } = name
     const { png } = flags
 
@@ -19,7 +19,7 @@ const CountryCards = ({ country }) => {
 
     //navigate to the dynamic route while passing the state of that singular item
     const Navigate = () => {
-        nav(dynamic, {
+        nav(cca3, {
             state: country
         })
     }

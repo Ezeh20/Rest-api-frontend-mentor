@@ -13,8 +13,7 @@ const App = () => {
     <div className={theme}>
       <Routes>
           <Route index element={<Home />} />
-          <Route path=":country/*" element={<CountryComponent />} />
-          <Route path=':country/:border' element={<BordersComponent />} />
+          <Route path=":country" element={<CountryComponent />} />
       </Routes>
     </div>
   )

@@ -15,6 +15,8 @@ export const CountriesContext = createContext({
     setSearched: () => { },
     filtered: [],
     setFiltered: () => { },
+    mappedCountries: [],
+    setMappedCountries: () => { },
     search: '',
     setSearch: () => { },
 
@@ -27,6 +29,7 @@ export const CountriesProvider = ({ children }) => {
     const [isActive, setIsActive] = useState(false)
     const [searched, setSearched] = useState(false)
     const [filtered, setFiltered] = useState(countries)
+    const [mappedCountries, setMappedCountries] = useState([])
     const [search, setSearch] = useState('')
 
     //Load the data once on mount
@@ -40,24 +43,24 @@ export const CountriesProvider = ({ children }) => {
     }, [])
 
 
-
-
-    //filter then produce a search result based on country's name
-    useEffect(() => {
-        const newItems = countries.filter((filtered) => {
-            return filtered.name['common'].toLowerCase().includes(search.toLowerCase())
-        })
-        setFiltered(newItems)
-    }, [countries, search])
-
-
     //filter then produce a search result based on user's search
     useEffect(() => {
         const filterRegion = countries.filter((filtered) => {
             return filtered.region.toLowerCase().includes(filterValue.toLowerCase())
         })
         setFiltered(filterRegion)
+        setMappedCountries(filterRegion)
     }, [countries, filterValue])
+
+
+    //filter then produce a search result based on country's name
+    useEffect(() => {
+        const newItems = filtered.filter((fill) => {
+            return fill.name['common'].toLowerCase().includes(search.toLowerCase())
+        })
+        setMappedCountries(newItems)
+    }, [search])
+
 
     const value = {
         countries,
@@ -73,9 +76,22 @@ export const CountriesProvider = ({ children }) => {
         filtered,
         setFiltered,
         search,
-        setSearch
+        setSearch,
+        mappedCountries,
+        setMappedCountries
     }
     return (
         <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
     )
 }
+
+
+/**
+ *  //filter then produce a search result based on country's name
+    useEffect(() => {
+        const newItems = filtered.filter((fill) => {
+            return fill.name['common'].toLowerCase().includes(search.toLowerCase())
+        })
+        setFiltered(newItems)
+    }, [search])
+ */

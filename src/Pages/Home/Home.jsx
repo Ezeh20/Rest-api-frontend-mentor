@@ -8,7 +8,9 @@ import styles from './Home.module.scss'
 
 
 const Home = () => {
-    const { filtered } = useContext(CountriesContext)
+    const { mappedCountries } = useContext(CountriesContext)
+
+    console.log(mappedCountries)
 
     return (
         <div>
@@ -16,11 +18,11 @@ const Home = () => {
                 <ContainerW>
                     <div className={`${styles.home} bg text`}>
                         <SearchComponent />
-                        <p className={styles.total}>({filtered.length})</p>
-                        {filtered.length < 1 && <p className={styles.not_found}> No country found</p>}
+                        <p className={styles.total}>({mappedCountries.length})</p>
+                        {mappedCountries.length < 1 && <p className={styles.not_found}> No country found</p>}
                         <div className={styles.contain}>
                             {
-                                filtered.map((country, idx) => {
+                                mappedCountries && mappedCountries.map((country, idx) => {
                                     return (
                                         <CountryCards key={idx} country={country} />
                                     )

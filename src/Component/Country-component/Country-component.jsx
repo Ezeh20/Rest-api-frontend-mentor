@@ -12,7 +12,6 @@ const CountryComponent = () => {
     const { countries } = useContext(CountriesContext)
     //access the state in the current route which was passed using the useNavigate hook
     const location = useLocation()
-    console.log(location)
     const nav = useNavigate()
     const borderNav = useNavigate()
     const {
@@ -33,6 +32,7 @@ const CountryComponent = () => {
     //navigate to previous route
     const back = () => {
         nav(-1)
+        
     }
 
     //use the object key to the native language then get the nativeName of that country
@@ -84,7 +84,7 @@ const CountryComponent = () => {
             <ButtonComponent buttonType={`border`} onClick={() => Border(border)} key={idx}>{border}</ButtonComponent>
         )
     })
-    
+
     //format population
     const formatted = new Intl.NumberFormat().format(population)
     return (

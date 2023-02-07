@@ -19,9 +19,7 @@ const SearchComponent = () => {
         setIsActive,
         searchValue,
         setSearch,
-        search,
-        filtered,
-        setFiltered
+        search
     } = useContext(CountriesContext)
 
     const [clear, setClear] = useState('')
@@ -58,15 +56,14 @@ const SearchComponent = () => {
     //a reset function that basically sets everything to their default states
     const clearInput = () => {
         setSearchValue("")
-        setFilterValue('')
+        setSearch('')
         setClear("")
     }
-
     //filter by region
     const filterRegion = (option) => {
         setFilterValue(option)
     }
-    
+
     //clear filter
     const clearRegion = () => {
         setFilterValue('')

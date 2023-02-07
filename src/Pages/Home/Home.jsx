@@ -10,8 +10,7 @@ import styles from './Home.module.scss'
 const Home = () => {
     const { mappedCountries } = useContext(CountriesContext)
 
-    console.log(mappedCountries)
-
+    
     return (
         <div>
             <Layout>

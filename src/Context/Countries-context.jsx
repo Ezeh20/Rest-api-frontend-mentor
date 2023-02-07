@@ -32,6 +32,8 @@ export const CountriesProvider = ({ children }) => {
     const [mappedCountries, setMappedCountries] = useState([])
     const [search, setSearch] = useState('')
 
+    console.log('ss', searchValue)
+    console.log('se', search)
     //Load the data once on mount
     useEffect(() => {
         const countriesCall = async () => {

@@ -19,16 +19,16 @@ const CountryCards = ({ country }) => {
 
     //navigate to the dynamic route while passing the state of that singular item
     const Navigate = () => {
-        nav(cca3, {
+        nav(dynamic, {
             state: country
         })
     }
     //map out the capital
     const Capital = capital && capital.filter((_, idx) => idx < 2).map((cap, idx) => {
         return (
-            <p key={idx} className={styles.country_details}>{cap}
+            <span key={idx} className={styles.country_details}>{cap}
                 {idx === capital.length - 1 ? "" : " , "}
-            </p>
+            </span>
         )
     })
 
@@ -38,8 +38,8 @@ const CountryCards = ({ country }) => {
             <div className={`${styles.card_content}`}>
                 <span className={`${styles.country_name} 'alt-text'`}>{common}</span>
                 <div className={styles.country_info}>
-                    <p>Population: <span className={styles.country_details}>{formatted}</span></p>
-                    <p>Region: <span className={styles.country_details}>{region}</span></p>
+                    <span>Population: <span className={styles.country_details}>{formatted}</span></span>
+                    <span>Region: <span className={styles.country_details}>{region}</span></span>
                     <span className={styles.capital}>Capital:  {Capital}</span>
                 </div>
             </div>

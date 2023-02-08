@@ -100,25 +100,25 @@ const CountryComponent = () => {
                             <img src={svg} alt="country-flag" className={styles.details_img} />
                             <div className={`${styles.second}`}>
                                 <div className={`${styles.details_content}`}>
-                                    <p className={`${styles.common} alt-text`}>{common}</p>
+                                    <span className={`${styles.common} alt-text`}>{common}</span>
                                     <div className={`${styles.country_info}`}>
                                         <div className={`${styles.info_details} alt-text`}>
-                                            <p>Native Name: <span>{Native_name}</span></p>
-                                            <p>Population: <span>{formatted}</span></p>
-                                            <p>Region: <span>{region}</span></p>
-                                            <p>Sub Region: <span>{subregion}</span></p>
-                                            <p>Capital: <span>{Capital}</span>
-                                            </p>
+                                            <span>Native Name: <span>{Native_name}</span></span>
+                                            <span>Population: <span>{formatted}</span></span>
+                                            <span>Region: <span>{region}</span></span>
+                                            <span>Sub Region: <span>{subregion}</span></span>
+                                            <span>Capital: <span>{Capital}</span>
+                                            </span>
                                         </div>
                                         <div className={`${styles.info_details} alt-text`}>
-                                            <p>Top Level Domain: <span>{tld}</span></p>
-                                            <p className={styles.crown}>Currencies: <span>{Currency}</span></p>
-                                            <p>Languages: {Lang}</p>
+                                            <span>Top Level Domain: <span>{tld}</span></span>
+                                            <span className={styles.crown}>Currencies: <span>{Currency}</span></span>
+                                            <span>Languages: {Lang}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div className={`${styles.country_border}`}>
-                                    <p>Border Countries:</p>
+                                    <span>Border Countries:</span>
                                     <div className={`${styles.borders}`}>
                                         {Border ? Border : 'No data'}
                                     </div>
